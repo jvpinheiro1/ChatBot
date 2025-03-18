@@ -1,0 +1,137 @@
+version: "3.1"
+
+nlu:
+- intent: cumprimentar
+  examples: |
+    - olá
+    - oi
+    - bom dia
+    - boa tarde
+    - boa noite
+    - e aí?
+    - tudo bem?
+
+- intent: agradecor
+  examples: |
+    - obrigado
+    - muito obrigado
+    - valeu
+    - agradeço
+    - grato
+
+- intent: informar genero
+  examples: |
+    - gosto de [comédia] (genero)
+    - quero ver um filme de [açao] (genero)
+    - prefiro [drama] (genero)
+    - me indica um filme de [suspense] (genero)
+    - quero ver um filme de [terror] (genero)
+    - me indica um filme de [romance] (genero)
+    - me indica um filme de [ficção cientifica] (genero)
+
+- intent: negar
+  examples: |
+    - nao
+    - nao quero
+    - nao gosto
+    - prefiro outro genero
+
+- intent: deapedir
+  examples: |
+    - tchau
+    - ate logo
+    - adeus
+    - ate a proxima
+
+- intent: afirmar
+  examples: |
+    - sim
+    - quero
+    - gosto
+    - pode ser
+
+- intent: pedir_ajuda
+  examples: |
+    - pode me ajudar?
+    - não sei o que fazer
+    - como funciona?
+    - me ajuda
+
+- intent: pedir recomendacao
+  examples: |
+    - me recomenda um filme
+    - quero uma recomendação
+    - me indique um filme
+    - me sugira um filme
+
+- intent: informar_genero_nao_listado
+  examples: |
+    - quero ver um filme de [documentário] (genero)
+    - prefiro [musical] (genero)
+    - me indica um filme de [animaçao] (genero)
+    - quero ver um filme de [faroeste] (genero)
+
+- intents:
+    - cumprimentar
+    - agradecer
+    - informar genero
+    - negar
+    - despedir
+    - afirmar
+    - pedir ajuda
+    - pedir recomendacao
+    - informar_genero_nao_listado
+
+entities:
+  - genero
+
+slots:
+  genero:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: genero
+
+responses:
+  utter_cumprimentar:
+    - text: "ola! Qual gnero de filme voce prefere?"
+
+utter perguntar_genero:
+  - text: "Qual genero de filme voce prefere?"
+
+utter_recomendar_filme:
+  - text: "Para o gênero {genero}, recomendo: {filmes}"
+
+utter_genero_nao listado:
+  - text: "Desculpe, ainda nao tenho recomendações para o genero {genero). Mas
+      posso recomendar outros generos como: Açao, Comedia, Drama, Suspense, Terror,
+      Romance e Ficção Cientifica."
+
+utter_negar:
+  - text: "Tudo bem. Posso te recomendar outro genero?"
+
+utter_agradecer:
+  - text: "De nada! Espero que goste do filme."
+
+utter despedir:
+  - text: "Ate logo! Se precisar de mais recomendacões, e so chamar."
+
+utter_ajuda:
+  - text: "Para te recomendar um filme, preciso saber qual genero voce prefere.
+        Voce pode me dizer algo como 'gosto de comedia' ou 'quero ver um filme de açao'."
+
+utter afirmar:
+  - text: "otimo! Qual genero voce prefere?"
+
+utter_genero_invalido:
+  - text: "Desculpe, nao entendi o genero. Voce pode me dizer novamente?"
+
+utter_pedir_recomendacao:
+  - text: "Claro! Qual genero de filme voce prefere?"
+
+actions:
+  - action_recomendar_filme
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
