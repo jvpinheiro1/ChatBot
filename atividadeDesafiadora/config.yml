@@ -1,0 +1,47 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+# This default value must be replaced with a unique assistant name within your deployment
+assistant_id: 20250415-192154-gritty-sub
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+
+pipeline:
+    - name: WhitespaceTokenizer
+    - name: RegexFeaturizer
+    - name: CountVectorsFeaturizer
+    - name: DIETClassifier
+#     epochs: 100
+#   - name: EntitySynonymMapper
+#   - name: ResponseSelector
+#     epochs: 100
+#   - name: FallbackClassifier
+#     threshold: 0.3
+#     ambiguity_threshold: 0.1
+#pipeline:
+#    - name: SpacyNLP
+#      model: pt_core_news_sm
+#    - name: CountVectorsFeaturizer
+#    - name: CountVectorsFeaturizer
+#      analyzer: char_wb
+#      min_ngram: 2
+#      max_ngram: 4
+#    - name: DIETClassifier
+#pipeline:
+#    - name: LanguageModeFeaturizer
+#      model_name: bert
+#      model_weights: bert-base-multilingual-cased
+#    - name: DIETClassifier
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: TEDPolicy  # Use este no lugar do UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true  # Config que faz papel similar ao antigo

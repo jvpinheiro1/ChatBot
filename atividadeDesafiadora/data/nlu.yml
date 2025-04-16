@@ -1,0 +1,39 @@
+version: "3.1"
+
+nlu:
+- intent: buscar_livro_titulo  # Corrigido "burcar" para "buscar"
+  examples: |
+    - qual o livro Dom Casmurro
+    - buscar livro chamado Cem Anos de Solidão
+    - quero saber sobre O Pequeno Príncipe
+
+- intent: buscar_livro_autor
+  examples: |
+    - livros de Machado de Assis
+    - buscar algo do Gabriel Garcia Marquez
+    - quero ler um livro da Clarice Lispector
+
+- intent: buscar_livro_assunto
+  examples: |
+    - livros sobre história do Brasil  # Corrigido "lviros" para "livros"
+    - buscar ficção científica
+    - quero algo de romance
+
+- intent: cumprimentar
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - e aí
+    - tudo bem?
+    - saudações
+
+- intent: goodbye
+  examples: |
+    - tchau
+    - até logo
+    - adeus
+    - falou
+    - até mais
+    - vou embora

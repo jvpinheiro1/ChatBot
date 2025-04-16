@@ -1,0 +1,10 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJwty9EJwCAMBNBVMoATuIqIWMlHoE1KjP6Iuzdg/+64d2ntAOtVnKU2I+EI64TC9cEIf7mpG7Lb0VHdIBsZYY+QWB4sdZhoDkDszCJco7eqfpsqZ9w7f+quKf8=": "action_buscar_livro",
+    "eJyljUEKwCAMBL+SB/gCvyIiVnII1Fhi9CL+vYI99FjobZedYd2YBsYl2ENMSoUtjB0Cx4wWnnJSVeTFtoqyGGQlJawWHJeMITYt4g0QL0wtHK2mKEvrUvY4vx29xX93/gZbmFTJ": "action_listen",
+    "eJwtysEJwCAMheFVMoATuIqIWMkh0MaSRC/i7g3Y2/8eX1o7wHoFZ6nNqHOEdaJwfTDCP25SQ3Y7FMUNspERaoTkMe7uYkrPAYgdWoRraKty7nLM3vkDcgIraA==": "action_buscar_livro",
+    "eJylzcEJwCAMBdBVMoATuIqIWMkhYGPR6EXcvQF76LHQ2094n+/mMjCviiPEJFTYwtwhcDzRwnNkaoKstjesapCFhLBZcBp6LipGLd4AsUKxcPSWYt3vsM36tvVu/l70N4tgV5s=": "utter_resultados_busca",
+    "eJy1jUsKhDAQRK/SB/AEuYpIiNqLhtgZ+uMmeHcb4sLlwDC7quIVb+7XBP0jeOayGTVO0EfIXA5M8JRKasjBuqIEg2xkhJpgjuC1BXFKWyYgDtASrK5bkTHnwVzfud7PPxvdDCULqlcre9Ph/lm63PPGhSw=": "action_listen"
+  }
+}

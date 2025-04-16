@@ -1,0 +1,39 @@
+version: "3.1"
+
+slots:
+  resultados_livros:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom  
+
+intents:
+  - saudacao
+  - buscar_livro_titulo
+  - buscar_livro_autor
+  #- buscar_livro_assunto
+  - despedida
+
+entities:
+  - titulo_livro
+  - nome_autor
+  - assunto_livro
+
+responses:
+  utter_cumprimentar:
+      - text: "Olá! Sou seu assistente de busca de livros. Como posso ajudar?"
+      - text: "Oi! Posso te ajudar a encontrar livros por título, autor ou assunto."
+  utter_resultados_busca:
+    - text: "Aqui estão os resultados: {resultados_livros}"
+  
+  # Adicione esta resposta se for necessária
+  utter_iamabot:
+    - text: "Sou um chatbot de busca de livros. Como posso ajudar?"
+    
+  utter_goodbye:
+    - text: "Até logo! Volte sempre para buscar mais livros."
+    - text: "Foi um prazer ajudar! Até a próxima."
+
+actions:
+  - action_buscar_livro
+  - utter_resultados_busca

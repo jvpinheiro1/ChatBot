@@ -1,0 +1,26 @@
+version: "3.1"
+
+stories:
+  - story: Busca por título
+    steps:
+      - intent: buscar_livro_titulo
+        entities:
+          - titulo_livro: "Dom Casmurro"
+      - action: action_buscar_livro  # (Será implementada em actions.py)
+      - slot_was_set:
+          - resultados_livros: "[...]"
+      - action: utter_resultados_busca
+
+  - story: Busca por autor
+    steps:
+      - intent: buscar_livro_autor
+        entities:
+          - nome_autor: "Clarice Lispector"
+      - action: action_buscar_livro
+      
+  - story: fluxo de saudação
+    steps:
+      - intent: cumprimentar
+      - action: utter_cumprimentar
+  
+    
